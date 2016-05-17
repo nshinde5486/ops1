@@ -1,0 +1,46 @@
+---
+# defaults file for the switch role.
+
+# default host variable, which is required by ops_*.py modules.
+# This variable actually used in in REST transport case.
+host: "{{ ansible_host }}"
+
+# default remote user on the switch
+remote_user: admin
+
+# Global variables.
+ops_debug: false
+
+# System default variables.
+ops_system_hostname: switch
+
+# Interface default variables.
+ops_intf_admin_state: down
+ops_intf_autoneg: default
+ops_intf_duplex: full
+ops_interfaces:
+  - name: 1
+  - name: 2
+  - name: 3
+  - name: 4
+  - name: 5
+  - name: 6
+  - name: 7
+  - name: 8
+  - name: 9
+  - name: 10
+
+# Port default variables.
+ops_port_tag: 1
+ops_port_vlan_mode: access
+ops_ports:
+  - name: 1
+  - name: 2
+  - name: 3
+  - name: 4
+  - name: 5
+  - name: 6
+  - name: 7
+  - name: 8
+  - name: 9
+  - name: 10

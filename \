@@ -1,0 +1,9 @@
+---
+- hosts: ops1
+  tasks:
+    - name: set config
+      ops_template:
+        src: ./ops_bgp.json
+        force: True
+        backup: True
+      become: yes

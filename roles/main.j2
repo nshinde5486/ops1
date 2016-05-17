@@ -1,0 +1,21 @@
+{# OpenSwitch JSON main template file #}
+
+{
+  {% if ops_interfaces is defined %}
+    {% include ['ops_intf.j2', 'templates/ops_intf.j2'] %},
+  {% endif %}
+
+  {% if ops_ports is defined %}
+    {% include ['ops_port.j2', 'templates/ops_port.j2'] %},
+  {% endif %}
+
+  {% if ops_bridges is defined %}
+    {% include ['ops_bridge.j2', 'templates/ops_bridge.j2'] %},
+  {% endif %}
+
+  {% if ops_vrfs is defined %}
+    {% include ['ops_vrf.j2', 'templates/ops_vrf.j2'] %},
+  {% endif %}
+
+  {% include ['ops_system.j2', 'templates/ops_system.j2'] %}
+}

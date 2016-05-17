@@ -1,0 +1,8 @@
+---
+- hosts: ops
+  tasks:
+    - name: set hostname with file lookup
+      ops_template:
+        src: ./ops_switchrole.json
+        backup: yes
+      become: yes

@@ -1,0 +1,17 @@
+---
+- hosts: ops
+  vars:
+  - cli:
+       host: ops
+       username: admin
+       password: admin
+       transport: cli
+
+  tasks:
+  - ops_config:
+         lines:
+           - ntp authentication enable
+           - ntp server 2.2.2.2 prefer
+         #parents: ['interface 1']
+         provider: "{{ cli }}"
+  connection: local

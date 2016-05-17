@@ -1,0 +1,15 @@
+---
+- name: print JSON input for this play
+  debug: >
+    msg="{{ lookup('template', 'main.j2') }}"
+
+- name: configure the switch
+  become: yes
+  ops_template:
+    src: "{{ lookup('template', 'main.j2') }}"
+    backup: true
+    force: true
+  register: ops_result
+
+- name: result from the switch
+  debug: var=ops_result

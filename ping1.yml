@@ -1,0 +1,10 @@
+---
+  #hosts to run the playbook on
+- hosts: ops
+  #User that will be logged in with
+  remote_user: root
+  tasks:
+      #Name/Caption for the task
+    - name: ping the OpenSwitch
+      #Ansible module to be used
+      ping:

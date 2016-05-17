@@ -1,0 +1,8 @@
+---
+- name: shutdown the switch
+  hosts: ops
+  gather_facts: yes
+  tasks:
+    - name: shutdown the switch
+      command: "shutdown 1"
+      become: yes

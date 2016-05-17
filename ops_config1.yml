@@ -1,0 +1,18 @@
+---
+- hosts: ops
+
+  vars:
+    cli:
+      host: 172.17.0.5
+      port: 22
+      username: netop
+      password: netop
+
+  tasks:
+    - name: configure vlan 10 over cli
+      ops_config:
+        commands:
+          - interface 1
+          - ip address 10.10.10.1/8 
+        provider: "{{ cli }}"
+      register: output 
